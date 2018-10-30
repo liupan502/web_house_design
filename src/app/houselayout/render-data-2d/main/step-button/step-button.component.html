@@ -1,0 +1,8 @@
+<div class="step-btn-group">
+    <button (click)="clickPreStep()" [class.diabled]="!isNextPrev(0)" [disabled]="!isNextPrev(0)">
+        <img src="assets/img/icon-cancel.png"/>撤销
+    </button>
+    <button [class.disabled]="!isNextPrev(1)" (click)="clickNextStep()" [disabled]="!isNextPrev(1)">
+        恢复<img src="assets/img/icon-recover.png"/>
+    </button>
+</div>

@@ -1,0 +1,15 @@
+
+<form #heroForm="ngForm" (focusin)='disableOthers()'>
+    <div class="input-group">
+        <label for="radius">直径</label>
+        <input id="radius" name="radius" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.radius_" #radius="ngModel" allowedRangeIndex="{{allows(0)}}"  forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$" >        
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="radius.invalid" class="warn-word">
+            <div *ngIf="radius.errors.required">直径必须指定</div>
+            <div *ngIf="radius.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="radius.errors.allowedRangeIndex">{{propertyRange_[0].alarm}}</div>
+            <div *ngIf="radius.errors.forbiddenName">请输入数字</div>
+        </div>
+    </div>
+</form>

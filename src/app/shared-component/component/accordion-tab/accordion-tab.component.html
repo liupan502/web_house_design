@@ -1,0 +1,16 @@
+<div class="ui-accordion-header ui-state-default ui-corner-all"
+     [ngClass]="{'ui-state-active': selected,'ui-state-disabled':disabled}"
+     (click)="toggle($event)">
+    <span class="active-highlight" *ngIf="selected"></span>
+    <span class="icon icon-caretright" [ngClass]="{'fa-caret-down': selected, 'fa-caret-right': !selected}"></span>
+    <a href="#" role="tab" [attr.aria-expanded]="selected"
+       [attr.aria-selected]="selected">{{header}}</a>
+</div>
+<div class="ui-accordion-content-wrapper" [@tabContent]="selected ? 'visible' : 'hidden'"
+     (@tabContent.done)="onToggleDone($event)"
+     [ngClass]="{'ui-accordion-content-wrapper-overflown': !selected||animating}" role="tabpanel"
+     [attr.aria-hidden]="!selected">
+    <div class="ui-accordion-content ui-widget-content" *ngIf="lazy ? selected : true">
+        <ng-content></ng-content>
+    </div>
+</div>

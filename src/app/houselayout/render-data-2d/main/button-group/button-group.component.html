@@ -1,0 +1,61 @@
+<div class="button-group clearfix">
+    <div class="button-group-left">
+        <div class="button-list">
+            <div class="button-box load drop-type" [ngClass]="{'active': isloadDrop}">
+                <span class="iconfont icon-new" (click)="isloadDrop=!isloadDrop">&#xe62f;</span>
+                <!-- <i>3d设计</i> -->
+                <!-- <span class="drop-down-btn fa fa-sort-down" (click)="isloadDrop=!isloadDrop"></span> -->
+                <div class="text">导入</div>
+                <div class="drop-box">
+                    <div class="triangle-up"></div>
+                    <ul class="render-list">
+                        <li (click)="openMyHouselayout()">我的户型</li>
+                        <li (click)="openSearchHouselayout()">搜索户型</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="split-line"></div>
+
+        <div class="button-list">
+            <div class="button-box redo" [class.disable]="!isNextPrev(0)" [class.diabled]="!isNextPrev(0)" (click)="clickPreStep()">
+                <span class="iconfont icon-redo">&#xe635;</span>
+                <div class="text">撤销</div>
+            </div>
+            <div class="button-box todo" [class.disable]="!isNextPrev(1)" [class.diabled]="!isNextPrev(1)" (click)="clickNextStep()">
+                <span class="iconfont icon-todo">&#xe633;</span>
+                <div class="text">恢复</div>
+            </div>
+        </div>
+
+        <div class="split-line"></div>
+
+        <div class="button-list">
+            <div class="button-box wall" *ngFor="let btn of btnGroup"  [class.selected]="btn === selectedBtn"
+                (click)="onSelectBtn(btn)">
+                <img [src]="btn.iconImg"/>
+                <div class="text">{{btn.name}}</div>
+            </div>
+        </div>
+
+        <div class="split-line"></div>
+
+        <div class="button-list">
+            <div class="button-box save" (click)="save()">
+                <span class="iconfont">&#xe631;</span>
+                <div class="text">保存</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="button-group-right">
+        <div class="button-list">
+            <div class="button-box design" routerLink="./../design">
+                <span class="iconfont">&#xe625;</span> <i>3D设计</i>
+                <!-- <div class="text">3d设计</div> -->
+            </div>
+        </div>
+    </div>
+</div>

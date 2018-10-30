@@ -1,0 +1,36 @@
+<!-- 弧线 -->
+<div class="arc hide-arr" id="arc">
+    <div class="input-group" aimShowTip>
+        <label>端点距离</label>
+        <input type="text" placeholder="/" [value]="getDistance()" (keyup)="$event.target.value = correction($event.target.value,'offsetHeight_')" (keyup.enter)="voteInputVal()" (focusout)="voteInputVal()" disabled>
+        <span>mm</span>
+        <div class="ts-info">不可编辑</div>
+    </div>
+
+    <div class="input-group">
+        <label>偏移高度</label>
+        <input type="text" placeholder="/" [value]="getOffsetHeight()" (keyup)="$event.target.value = correction($event.target.value,'offSetHeight_')" (keyup.enter)="voteInputVal()" (focusout)="voteInputVal()">
+        <span>mm</span>
+    </div>
+
+    <div class="input-group">
+        <label>弧深度</label>
+        <input type="text" placeholder="/" [value]="getArcDepth()" (keyup)="$event.target.value = correction($event.target.value,'arcDepth_')" (keyup.enter)="voteInputVal()" (focusout)="voteInputVal()">
+        <span>mm</span>
+    </div>
+
+    <div class="arc-direction">
+        <label>弧方向</label>
+        <!-- <select>
+            <option>向内</option>
+            <option>向外</option>
+        </select> -->
+        
+        <label for="clockwise" class="radio-inline" (click)="clockwiseDrawArc()" style="width:auto">
+            <input type="radio"  checked name="inlineRadioOptions" id="clockwise" value="顺时针"/> 顺时针
+        </label>
+        <label for="anticlockwise" class="radio-inline" (click)="counterClockwiseDrawArc()" style="width:auto">
+            <input type="radio"   name="inlineRadioOptions" id="anticlockwise" value="逆时针"/> 逆时针
+        </label>
+    </div>
+</div>

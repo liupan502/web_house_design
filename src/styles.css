@@ -1,0 +1,188 @@
+
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "./assets/iconfont/iconfont.css";
+@font-face {font-family: 'iconfont';
+    src: url('./assets/iconfont/iconfont.eot');
+    src: url('./assets/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./assets/iconfont/iconfont.woff') format('woff'),
+    url('./assets/iconfont/iconfont.ttf') format('truetype'),
+    url('./assets/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: "微软雅黑";
+    height: 100%;
+    width: 100%;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    background-color: #f2f2f2 !important;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-style: normal;
+}
+
+address, time, em, i, b, span {
+    font-style: normal;
+}
+
+select, input, img {
+    vertical-align: middle;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+select, input[type=text], input[type=tel], input[type=password], input[type=number], textarea {
+    /* -webkit-appearance: none;  */
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
+.icon {
+    display: inline-block;
+}
+
+.ui-sidebar {
+    padding: 0;
+}
+
+.ui-widget-overlay {
+    /* position: initial; */
+    /* background:initial;
+    z-index: 1 */
+}
+
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.mainColor {
+    color: #333843 !important;
+}
+
+.subColor {
+    color: #1da1f2 !important;
+}
+
+/* 轮播图切换 */
+ /* .details-display .ui-galleria {
+    width: 100% !important;
+    padding: 20px 0;
+}
+
+.details-display .ui-galleria-panel-wrapper {
+    left: 20%;
+    position: absolute !important;
+}
+
+.details-display .ui-galleria-filmstrip-wrapper {
+    width: 12% !important;
+    margin: 0;
+    height: 500px !important;
+    left: 2%;
+
+}
+
+.details-display .ui-panel-images {
+    width: 100%;
+    height: 100%;
+
+}
+
+.details-display .ui-galleria-frame {
+    opacity: 1 !important;
+    clear: left !important;
+    width: 98px !important;
+    height: 72px !important;
+    margin-bottom: 5px;
+}
+
+.details-display .ui-galleria-frame-active {
+    border: 2px solid #0FAAF2
+}
+
+.details-display .ui-galleria-frame-image {
+    width: 94px !important;
+    height: 68px !important;
+    padding: 1px;
+}
+
+.details-display .ui-galleria-nav-next, .details-display .ui-galleria-nav-prev {
+    top: 50%;
+}
+
+.details-display .ui-galleria-nav-prev {
+    left: 15%;
+}
+
+.details-display .ui-tabview .ui-tabview-nav > li.ui-state-default {
+    border: none;
+    background-color: initial;
+}
+
+.details-display .ui-tabview .ui-tabview-nav > li.ui-state-active {
+    border-bottom: 2px solid #000;
+}
+
+.details-display .ui-sidebar .ui-sidebar-close {
+    color: #fff;
+}
+
+.pictures-gallery-wrapper .ui-sidebar {
+    background-color: #333843;
+}
+
+.footer-btn-group .ui-g-2 {
+    padding: 0 !important
+}  */

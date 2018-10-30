@@ -1,0 +1,52 @@
+  <!-- 直线 -->
+  <div class="line hide-arr" id="line">
+      <div class="input-group" aimShowTip>
+          <label>墙体长度</label>         
+          <input [value]="getLength()" disabled>
+          <span>mm</span>
+          <div class="ts-info">不可编辑</div>
+      </div>
+
+      <!-- 在墙体已经固定时，偏移高度也不可编辑 -->
+      <div class="input-group" *ngIf="isTmp_">
+          <label>偏移高度</label>
+          <input type="text"  (keyup)="$event.target.value = correction($event.target.value,'offsetHeight_',propertyRange_[1])" [value]="getOffsetHeight()"   placeholder="/"  (keyup.enter)="vote()" (focusout)="vote()">
+          <span>mm</span>
+      </div>
+
+      <div class="input-group" *ngIf="!isTmp_" aimShowTip>
+            <label>偏移高度</label>
+            <input type="text"   [value]="getOffsetHeight()"   placeholder="/" disabled >
+            <span>mm</span>
+            <div class="ts-info">不可编辑</div>            
+        </div>
+
+     <!-- 暂不可编辑 -->
+      <div class="input-group" aimShowTip>
+            <label>墙体厚度</label>         
+            <input [value]="thickness_" disabled>
+            <span>mm</span>
+            <div class="ts-info">不可编辑</div>
+      </div>
+
+      <!-- 墙体高度绘制时不显示(有需要可以更改代码为显示) -->
+      <!-- 在选中时显示 -->
+      <div class="input-group" *ngIf="!isTmp_">
+          <label>墙体高度</label>
+          <input type="text" (keyup)="$event.target.value = correction($event.target.value,'height_',propertyRange_[1])" [value]="getHeight()"   placeholder="/"  (keyup.enter)="vote()" (focusout)="vote()">
+          <span>mm</span>
+      </div>
+
+
+     <!-- 墙体已经固定(成为房间组成部分)时， 可以编辑墙类型 -->
+     <div class="input-group" *ngIf="wallType_ !== unhandled_">
+           <label>墙体类型</label>
+           <select name="state" [ngModel]="wallType_"  (ngModelChange)="onChange($event)">
+                <option *ngFor="let state of wallTypes" [ngValue]="state.id">
+                  {{ state.abbrev }}
+                </option>
+           </select>             
+     </div>
+     
+
+  </div>

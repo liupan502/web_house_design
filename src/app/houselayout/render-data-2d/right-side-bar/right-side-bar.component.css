@@ -1,0 +1,109 @@
+.right-side{
+    width: 264px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    display:none;
+    
+    /* background-color:#333843; */
+}
+
+.right-side-con {
+    background-color: #333843;
+    width: 264px;
+    border-top: 2px solid #17202b;
+    overflow: hidden;
+    height: 100%;
+}
+
+.right-side.show {
+   display:block;
+   /* z-index: -10; */
+}
+
+.right-side-con .icon-close {
+    display: block;
+    width: 24px;
+    height: 37px;
+    background: url("./../../../../assets/img/common/icon/close.png") center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+}
+
+.right-con {
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.right-con form {
+    margin: 0 30px;
+}
+
+.right-side h4 {
+    color: #fff;
+    font-weight: normal;
+}
+
+.right-arr {
+    background-color: #232936;
+    padding: 7px 7px 7px 2px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.right-arr img {
+    float: right;
+    padding-top: 5px;
+}
+
+.right-side h4 {
+    float: left;
+    border-left: 3px solid #0faaf2;
+    margin: 0;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.input-group {
+    padding: 15px 0;
+}
+
+.input-group h4,
+.input-group label,
+.input-group span {
+    color: #fff;
+    font-weight: normal;
+}
+
+.right-btn {
+    background: rgba(23, 32, 43, .2);
+    width: 8px;
+    height: 100%;
+    float: left;
+}
+
+.right-btn:hover {
+    background: rgba(23, 32, 43, .4);
+}
+
+.img-bg {
+    /* width:100%; */
+    background: rgba(29, 161, 242, .5);
+    height: 84px;
+    position: absolute;
+    bottom: 40%;
+    width: 8px;
+}
+
+.img-bg img {
+    display: block;
+    margin: 0 atuo;
+    padding: 39px 0;
+    margin: 0 1px;
+}
+

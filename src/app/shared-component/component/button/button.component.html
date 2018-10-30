@@ -1,0 +1,12 @@
+<button [attr.type]="type" [class]="styleClass" [style]="style" [disabled]="disabled" [ngClass]="{'ui-button ui-widget ui-state-default ui-corner-all':true,
+                'ui-button-icon-only': (icon && !label),
+                'ui-button-text-icon-left': (icon && label && iconPos === 'left'),
+                'ui-button-text-icon-right': (icon && label && iconPos === 'right'),
+                'ui-button-text-only': (!icon && label),
+                'ui-button-text-empty': (!icon && !label),
+                'ui-state-disabled': disabled}" (click)="onClick.emit($event)" (focus)="onFocus.emit($event)" (blur)="onBlur.emit($event)">
+  <span [ngClass]="{'ui-clickable': true,
+                'ui-button-icon-left': (iconPos === 'left'), 
+                'ui-button-icon-right': (iconPos === 'right')}" [class]="icon" *ngIf="icon"></span>
+  <span class="ui-button-text ui-clickable">{{label||'ui-btn'}}</span>
+</button>

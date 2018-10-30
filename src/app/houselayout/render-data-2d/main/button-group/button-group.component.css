@@ -1,0 +1,253 @@
+
+.button-group .button-group-left {
+    padding: 8px 3px 8px 5px;
+    background: #333843;
+    border-radius: 2px;
+    display: flex;
+    float:left;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25)
+}
+
+.button-group .button-group-right {
+    padding: 6px 3px 6px 5px;
+    background: #333843;
+    border-radius: 2px;
+    display: flex;
+    width: 85px;
+    float: left;
+    margin: 2px -1px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25)
+}
+
+.button-group-right .design:hover i,.button-group-right .design:hover span{
+    opacity: 1;
+}
+.button-group-right i{
+    color:#fff;
+    opacity: .6;
+    font-size:14px;
+    line-height: 25px;
+
+}
+
+.button-group .button-list {
+    display: flex;
+    flex: 1;
+}
+
+.button-list button{
+    border:none;
+    background:none;
+}
+
+
+
+.button-list .wall img:hover,.button-list .wall.selected img{
+    opacity: 1
+}
+
+.button-list .wall img{
+    opacity: .6
+}
+
+/* .button-list .wall.disable img{
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    background-color: rgba(35, 41, 51, .2);
+} */
+.button-group .split-line {
+    height: 20px;
+    border-left: 1px solid #ffffff;
+    opacity: .4;
+    margin: 2px 4px;
+}
+
+.button-box {
+    flex: 1;
+    display: flex;
+    padding: 0 6px;
+    height: 24px;
+    position: relative;
+}
+
+.button-group .disable {
+    opacity: .3;
+}
+
+.button-box .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    opacity: .6;
+}
+.button-group .iconfont{
+    font-size:24px;
+    color:#fff;
+    opacity:.6;
+}
+
+.button-group .iconfont:hover{
+    opacity:1;
+}
+.button-box:not(.disable) {
+    cursor: pointer;
+}
+
+.button-box:not(.disable):hover .iconfont,
+.button-box:not(.disable):hover .drop-down-btn {
+    opacity: .9;
+}
+
+/* .button-list .load .icon {
+    background: url("../../../../../assets/img/houselayout/tool/new.png") center no-repeat;
+    background-size: 100%;
+} */
+
+/* .button-list .redo .icon {
+    background: url("../../../../../assets/img/houselayout/tool/redo.png") center no-repeat;
+    background-size: 100%;
+}
+
+.button-list .todo .icon {
+    background: url("../../../../../assets/img/houselayout/tool/todo.png") center no-repeat;
+    background-size: 100%;
+}
+
+.button-list .inwall .icon {
+    background: url("../../../../../assets/img/houselayout/tool/inwall.png") center no-repeat;
+    background-size: 100%;
+}
+
+.button-list .outwall .icon {
+    background: url("../../../../../assets/img/houselayout/tool/outwall.png") center no-repeat;
+    background-size: 100%;
+}
+
+.button-list .save .icon {
+    background: url("../../../../../assets/img/houselayout/tool/save.png") center no-repeat;
+    background-size: 100%;
+}
+
+.button-list .design .icon {
+    background: url("../../../../../assets/img/houselayout/tool/design.png") center no-repeat;
+    background-size: 100%;
+} */
+
+.button-list .button-box {
+    outline: none;
+}
+
+.button-box .text {
+    position: absolute;
+    top: 37px;
+    left: -40%;
+    width: 60px;
+    background: #333843;
+    border-top: none;
+    line-height: 25px;
+    display: none;
+    color: rgba(255, 255, 255, .9);
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* .button-box.drop-type .text {
+    position: absolute;
+    top: 32px;
+    left: 0;
+} */
+
+.button-box.drop-type.load .text {
+    position: absolute;
+    top: 37px;
+    left: -5px;
+}
+
+.button-box:hover .text {
+    display: block;
+}
+
+.button-box.active:not(.disable) .text {
+    display: none;
+}
+
+.button-box .drop-down-btn {
+    display: inline-block;
+    width: 8px;
+    height: 24px;
+    color: #ffffff;
+    padding-left: 10px;
+    opacity: .6;
+}
+
+.button-box .drop-box {
+    position: absolute;
+    top: 42px;
+    left: -50%;
+    width: 76px;
+    background: #333843;
+    border-top: none;
+    /* line-height: 20px; */
+    display: none;
+    /* padding-bottom: 3px; */
+}
+
+/* .button-box.load .drop-box {
+    position: absolute;
+    top: 30px;
+    left: -5px;
+} */
+
+.triangle-up {
+    position:absolute;
+    left:50%;
+    transform: translate(-50%);
+    top:-7px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #444A56;
+}
+
+.drop-box .render-list{
+    border-radius: 2px;
+    padding: 5px 0;
+    
+}
+
+.drop-box .render-list li{
+    outline: none;
+    color: rgba(255, 255, 255, .9);
+    text-align: center;
+    font-size: 12px;
+    text-align: center;
+    line-height: 26px;
+    
+}
+
+.drop-box .render-list li:hover{
+    color:#1DA1F2;
+    
+}
+
+.button-box .drop-box div:hover {
+    color: #fff;
+}
+
+.button-box.active:not(.disable) .iconfont {
+    opacity: .9 !important;
+}
+
+.button-box.active:not(.disable) .drop-box {
+    display: block;
+}
+
+.button-box.active:not(.disable) .drop-down-btn {
+    transform: rotate(180deg);
+    padding-left: 0px;
+    padding-right: 10px;
+}
+

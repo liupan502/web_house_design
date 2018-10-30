@@ -1,0 +1,128 @@
+.ui-paginator {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  background: transparent;
+  border: none;
+  padding: 0 2px;
+}
+
+.ui-paginator .ui-state-default {
+  background: transparent;
+  border: none;
+}
+
+.ui-paginator .ui-state-default.ui-state-active {
+  background: #1DA1F2;
+  color: rgba(255, 255, 255, .9);
+}
+
+.ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-prev {
+  background: #444A56;
+  border-radius: 2px;
+  width: 28px;
+}
+
+.ui-paginator .ui-paginator-next:hover,
+.ui-paginator .ui-paginator-prev:hover {
+  background: #444A56;
+  color: rgba(255, 255, 255, .9);
+}
+
+.ui-paginator .ui-paginator-top {
+  border-bottom: 0 none;
+}
+
+.ui-paginator .ui-paginator-bottom {
+  border-top: 0 none;
+}
+
+.ui-paginator .ui-paginator-left-content {
+  float: left;
+}
+
+.ui-paginator .ui-paginator-right-content {
+  float: right;
+}
+
+.ui-paginator .ui-paginator-page,
+.ui-paginator .ui-paginator-pages,
+.ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-last,
+.ui-paginator .ui-paginator-first,
+.ui-paginator .ui-paginator-prev,
+.ui-paginator .ui-paginator-current {
+  display: inline-block;
+  zoom: 1;
+  text-decoration: none;
+  vertical-align: middle;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.ui-paginator .ui-paginator-pages .ui-paginator-page {
+	padding: 0.5px 6.5px;
+	margin: 0 2px;
+}
+
+.ui-paginator .ui-paginator-page,
+.ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-last,
+.ui-paginator .ui-paginator-first,
+.ui-paginator .ui-paginator-prev {
+  cursor: pointer;
+}
+
+.ui-paginator .ui-paginator-current,
+.ui-paginator .ui-paginator-rpp-options {
+  margin-left: 1em;
+  margin-right: 1em;
+  background-image: none;
+}
+
+.ui-paginator .ui-paginator-jtp-select option,
+.ui-paginator .ui-paginator-rpp-options option {
+  background-image: none;
+  border: 0 none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.ui-paginator a.ui-state-disabled {
+  outline: 0 none;
+}
+
+.ui-paginator .ui-dropdown {
+  min-width: 4em;
+  margin-left: .375em;
+}
+
+.ui-fluid .ui-paginator .ui-dropdown {
+  width: auto;
+}
+
+.ui-paginator .iconfont {
+  font-size: 20px;
+  color: rgba(255, 255, 255, .6);
+  line-height: 20px;
+  vertical-align: top;
+}
+
+.ui-paginator .iconfont:hover {
+  color: rgba(255, 255, 255, .9);
+}
+
+.ui-paginator a.ui-state-disabled .iconfont {
+  color: rgba(255, 255, 255, .3);
+}
+
+.ui-paginator-first .icon-step-backward {
+  font-size: 14px;
+  color: #555;
+  line-height: 20px;
+}

@@ -1,0 +1,49 @@
+<!-- <div class="left-side" [class.disabled]="disabled_">
+    <div class="left-side-con" [@leftShowChanged]="leftShowChanged">
+        <ul id="nav">
+            <li><a routerLink="./house-type" routerLinkActive="active">户型绘制</a></li>
+            <li class="disabled"><a routerLink="./door-window" routerLinkActive="active">门窗</a></li>
+            <li class="disabled"><a routerLink="./structure-com" routerLinkActive="active">结构组件</a></li>
+            <li class="disabled"><a routerLink="./marker" routerLinkActive="active">墙标地标</a></li>
+        </ul>
+        <router-outlet></router-outlet>          
+    </div>
+
+    <div class="left-btn">
+        <div class="img-bg" (click)="toggleLeft()"><img id="myImgLeft" src="assets/img/left_shrink_s.png" /></div>
+    </div>
+</div> -->
+
+<div class="left-side-box" [ngClass]="{'open-status': leftSideStatus=='open'}">
+    <div class="left-side" [class.disabled]="disabled_">
+        <div class="close-box" (click)="leftSideStatus='open'">
+            <ul>
+                <li *ngFor="let nav of navList">{{nav}}</li>
+            </ul>
+        </div>
+        <div class="left-side-con open-box">
+            <div class="left-nav">
+                <div class="close-btn" (click)="leftSideStatus='close'">
+                    <span class="iconfont icon-back">&#xe620;</span>
+                </div>
+                <ul id="nav">
+                    <li>
+                        <a routerLink="./house-type" routerLinkActive="active">绘制</a>
+                    </li>
+                    <li class="disabled">
+                        <a routerLink="./door-window" routerLinkActive="active">门窗</a>
+                    </li>
+                    <li class="disabled">
+                        <a routerLink="./structure-com" routerLinkActive="active">结构</a>
+                    </li>
+                    <li class="disabled">
+                        <a routerLink="./marker" routerLinkActive="active">地标</a>
+                    </li>
+                </ul>
+            </div>
+
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>

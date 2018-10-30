@@ -1,0 +1,205 @@
+<div class="index-box">
+    <div class="header">
+        <div class="header-content">
+            <img src="assets/img/index/banner.png" alt="">
+            <div class="design-btn" routerLink="/design">立即设计</div>
+        </div>
+    </div>
+
+    <!--section-->
+    <div class="section">
+        <div class="apply-wrap free-trial" [class.vertify]="isShowVertify">
+            <form class="page-content-wrapper trial-form" #userForm="ngForm" (ngSubmit)="sumbitApply()">
+                <div class="form-list" [class.noerror]="name.valid || name.pristine">
+                    <input class="J-username" type="text" placeholder="您的姓名" #name="ngModel" required [(ngModel)]="userName" name="name" maxlength="16"
+                        pattern="[a-zA-Z0-9_|\u4E00-\u9FA5]{1,16}">
+                    <div [hidden]="name.valid || name.pristine" class="error">
+                        <span>请输入姓名</span>
+                    </div>
+                </div>
+                <div class="form-list" [class.noerror]="phone.valid || phone.pristine">
+                    <input class="J-phone" type="text" placeholder="联系电话" [(ngModel)]="userPhone" name="phone" maxlength="11" pattern="^1[3|4|5|7|8]\d{9}$"
+                        #phone="ngModel" required>
+                    <div [hidden]="phone.valid || phone.pristine" class="error">
+                        <span [hidden]="phone.valid">请输入正确的手机号</span>
+                    </div>
+                </div>
+                <div class="form-list sumbit-form-list">
+                    <button type="submit" class="btn J-free-trial" [disabled]="!userForm.form.valid" type="text">申请试用</button>
+                </div>
+            </form>
+            <div class="page-content-wrapper vertify-code">
+                <div class="submit-over">您已成功申请试用！</div>
+            </div>
+        </div>
+
+        <div class="tool-module">
+            <h3>工具模块</h3>
+            <div class="tool-wrap clearfix w">
+                <div class="fl tool">
+                    <img src="assets/img/index/icon-1.png" alt="">
+                </div>
+                <div class="fl tool">
+                    <img src="assets/img/index/icon-2.png" alt="">
+                </div>
+                <div class="fl tool">
+                    <img src="assets/img/index/icon-3.png" alt="">
+                </div>
+                <div class="fl tool">
+                    <img src="assets/img/index/icon-4.png" alt="">
+                </div>
+            </div>
+            <div class="tool-banner w">
+                <img src="assets/img/index/img-1.png" alt="">
+            </div>
+        </div>
+        <div class="advantage-wrap">
+            <div class="w clearfix">
+                <div class="advatage  advatage1 fl">
+                    <div class="effect">
+                        <img src="assets/img/index/icon-picture.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">照片级效果图</h3>
+                        <p class="desc">
+                            保持惯有快速、高质量输出图，新增漫游渲染视角。
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="advatage advatage2 fr">
+                    <div class="effect">
+                        <img src="assets/img/index/img-construction.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">企业级施工图</h3>
+                        <p class="desc">
+                            完全遵循行业规范，一键导出全套施工图，修改设计同步施工图。
+                        </p>
+                    </div>
+
+                </div>
+                <div class="advatage advatage3 fl">
+                    <div class="effect">
+                        <img src="assets/img/index/icon-measuring.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">精准算量清单</h3>
+                        <p class="desc">
+                            一键导出精准材料清单/报价清单，控制施工成本，修改设计同步修改算量清单。
+                        </p>
+                    </div>
+
+                </div>
+                <div class="advatage advatage4 fr">
+                    <div class="effect">
+                        <img src="assets/img/index/img-5d.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">5D施工模拟</h3>
+                        <p class="desc">
+                            1:1重新整个施工过程，从毛坯到硬装、从硬装到软装，同步录制导出施工视频，实现施工过程可视化。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="video-wrap">
+            <h3>家装革命&nbsp;&nbsp;震撼来袭</h3>
+            <div class="w video-content">
+                <video id="video" poster="" class="video-js vjs-default-skin" controls preload="none">
+                    <source src="http://aim5d.fuwo.com/AIM20171214.mp4" type='video/mp4' /> 您的浏览器版本较低，不支持播放该视频。
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="site-info w">
+            <div class="page-content-wrapper clearfix">
+                <div class="site-content-block">
+                    <h4>公司介绍</h4>
+                    <ul>
+                        <li>
+                            <a href="">关于我们</a>
+                        </li>
+                        <li>
+                            <a href="">发展历程</a>
+                        </li>
+                        <li>
+                            <a href="">媒体报道</a>
+                        </li>
+                        <li>
+                            <a href="">合作伙伴</a>
+                        </li>
+                        <li>
+                            <a href="">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-content-block">
+                    <h4>全站导航</h4>
+                    <ul>
+                        <li>
+                            <a href="">爱福窝</a>
+                        </li>
+                        <li>
+                            <a href="">3D云设计</a>
+                        </li>
+                        <li>
+                            <a href="">商务合作</a>
+                        </li>
+                        <li>
+                            <a href="">家具商城</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-content-block">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li>
+                            <a href="">VR集成系统</a>
+                        </li>
+                        <li>
+                            <a href="">接单宝</a>
+                        </li>
+                        <li>
+                            <a href="">量房宝</a>
+                        </li>
+                        <li>
+                            <a href="">流量宝</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-content-block">
+                    <h4>商务合作</h4>
+                    <ul>
+                        <li>
+                            <a href="">合伙人加盟</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-content-block">
+                    <h4>联系我们</h4>
+                    <p>400-620-6180
+                        <br>邮箱：
+                        <a href="mailto:service@fuwo.com">service@fuwo.com</a>
+                        <br>微博：
+                        <a href="">@爱福窝云设计</a>
+                        <br>微信：yunfuwo</p>
+                </div>
+                <div class="qr-wrapper">
+                    <img class="qr-code" style="width: 100px;" src="assets/img/index/yunsheji.jpg">
+                    <span>扫码访问爱福窝云设计</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-info">
+            <div class="page-content-wrapper w">
+                <p>&copy;2016 上海爱福窝云技术有限公司 版权所有 - 沪ICP备08102393号</p>
+            </div>
+        </div>
+    </div>
+</div>

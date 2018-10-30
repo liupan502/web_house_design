@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="header-bar">
+        <i class="iconfont logo">&#xe638;</i>
+        <div class="login-box" [ngClass]="{'isLogin': isLogin}">
+            <div class="login-list login" routerLink="/login">
+                <span class="iconfont icon-login"></span>
+                <span>登录</span>
+            </div>
+
+            <div class="login-list setting" *ngIf="isLogin">
+                <div class="user-setting-box">
+                    <div class="user-setting-header">
+                        <span class="iconfont icon-login">&#xe636;</span>
+                        <span class='name-in-header'>{{name}}</span>
+                    </div>
+                    <!-- 个人设置  -->
+                    <div class="user-setting">
+                        <div class="triangle-up"></div>
+                        <div class="list-box">
+                            <div class='setting-list-item' routerLink="user-setting">我的设计</div>
+                            <div class='setting-list-item account-box' routerLink="user-setting/account-setting">账号设置</div>
+                            <div class='setting-list-item logout' (click)="logout()">退出</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

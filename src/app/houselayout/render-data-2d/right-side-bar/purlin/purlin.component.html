@@ -1,0 +1,58 @@
+<!-- 梁 -->
+<form #heroForm="ngForm" (focusin)='disableOthers()'>
+    <div class="input-group" aimShowTip>
+        <label for="length">长度</label>  
+        <input id="length" disabled name="length" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.length_" #length="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+    
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="length.invalid " class="warn-word">
+            <div *ngIf="length.errors.required">长度必须指定</div>
+            <div *ngIf="length.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="length.errors.allowedRangeIndex">{{propertyRange_[0].alarm}}</div>
+            <div *ngIf="length.errors.forbiddenName">请输入数字</div>
+        </div>
+        <div class="ts-info">不可编辑</div>
+    </div>
+
+    <div class="input-group">
+        <label for="width">宽度</label>
+        <input id="width" name="width" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.width_" #width="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="width.invalid " class="warn-word">
+            <div *ngIf="width.errors.required"> 宽度必须指定</div>
+            <div *ngIf="width.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="width.errors.allowedRangeIndex"> {{propertyRange_[1].alarm}}</div>
+            <div *ngIf="width.errors.forbiddenName"> 请输入数字</div>
+        </div>
+    </div>
+
+    <div class="input-group" aimShowTip>
+        <label for="thickness">厚度</label>
+        <input id="thickness" name="thickness" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.thickness_" #thickness="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="thickness.invalid " class="warn-word">
+            <div *ngIf="thickness.errors.required"> 厚度必须指定</div>
+            <div *ngIf="thickness.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="thickness.errors.allowedRangeIndex"> {{propertyRange_[2].alarm}}</div>
+            <div *ngIf="thickness.errors.forbiddenName"> 请输入数字</div>
+        </div>
+        <div class="ts-info">不可编辑</div>
+    </div>
+
+
+    <div class="input-group">
+        <label for="rotation">旋转角度</label>
+        <input id="rotation" name="rotation" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.rotationZ_" #rotation="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>度</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="rotation.invalid " class="warn-word">
+            <div *ngIf="rotation.errors.required"> 旋转角度必须指定 </div>
+            <div *ngIf="rotation.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="rotation.errors.allowedRangeIndex"> {{propertyRange_[3].alarm}}</div>
+            <div *ngIf="rotation.errors.forbiddenName">请输入数字</div>
+        </div>
+    </div>
+</form>

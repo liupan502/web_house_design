@@ -1,0 +1,19 @@
+<!-- 主画图区 -->
+<div [class.disabled]="disabled_">
+    <div id="myDiv">
+        <canvas id="myCanvas" resize></canvas>
+        <input type="text" id="wallLength" value="0" (keyup)="onAllKeyUp($event)"/>
+    </div>
+    <!-- 墙壁状态按钮 -->
+    <!-- <div class="main-btn-group" id="input-group">          
+            <button *ngFor="let btn of btns" [disabled]="btn !== selectedBtn" [class.selected]="btn === selectedBtn" (click)="onSelectBtn(btn)">{{btn.btnName}}
+            </button>       
+            <button (click)="clickSaveData()" type="button1" id="savedata" style="color: #0062CC;" >保存数据</button><button (click)="clickLoadData()" type="button1" id="savedata" style="color: #0062CC;">读取数据</button>       
+        </div> -->
+    <!-- 顶部按钮组 -->
+    <app-button-group (btGroupgenerateOuterWall)="onbtGroupgenerateOuterWal($event)" ></app-button-group>
+    <!-- 放大/缩小滚动条 -->
+    <app-scroll-bar></app-scroll-bar>
+    <!-- 模型操作按钮组-->
+    <app-operate-button-group></app-operate-button-group>
+</div>

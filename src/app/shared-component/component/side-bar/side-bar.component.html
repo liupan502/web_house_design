@@ -1,0 +1,9 @@
+<div class="side-bar" [@showChanged]="showChanged" [ngClass]="{'left-bar':sidePos==='left','right-bar':sidePos==='right'}">
+    <ng-content></ng-content>
+
+    <div class="bar-btn">
+        <div class="img-bg" (click)="toggle()">
+            <span class="shrink-icon icon" [ngClass]="{'inactive': !isShow}"></span>
+        </div>
+    </div>
+</div>

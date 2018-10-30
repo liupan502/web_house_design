@@ -1,0 +1,85 @@
+<!-- 飘窗 -->
+<form #windowform="ngForm" (focusin)='disableOthers()'>
+    <div class="input-group" aimShowTip>
+        <label for="name">离地高度</label>
+        <input id="name" name="name" (keyup)="hello()" (focusout)="voting(windowform.valid)" (keyup.enter)="hello()" required maxlength="7" [(ngModel)]="objinfo.distancefromground_" #name="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$"
+            disabled>
+        <span>mm</span>
+        <!-- 以下为提示信息，如果想让本输入框可用并显示下列提示信息，取消上面的disabled限制 -->
+        <!-- 在平面绘制情况下 离地高度不可修改 -->
+        <div *ngIf='name.invalid' class="warn-word">
+            <div *ngIf="name.errors.required">窗户离地高度必须指定</div>
+            <div *ngIf="name.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="name.errors.allowedRangeIndex">{{propertyRange_[0].alarm}}</div>
+            <div *ngIf="name.errors.forbiddenName">请输入数字</div>
+        </div>
+        <div class="ts-info">平面绘制时无法修改离地高度</div>
+    </div>
+    <div class="input-group">
+        <label for="length">宽度</label>
+        <input id="length" name="length" (keyup)="hello()" (focusout)="voting(windowform.valid)" (keyup.enter)="voting(windowform.valid)" required maxlength="7" [(ngModel)]="objinfo.length_" #length="ngModel" allowedRangeIndex="{{allows(2)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="length.invalid" class="warn-word">
+            <div *ngIf="length.errors.required"> 宽度必须指定</div>
+            <div *ngIf="length.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="length.errors.allowedRangeIndex"> {{propertyRange_[1].alarm}}</div>
+            <div *ngIf="length.errors.forbiddenName"> 请输入数字</div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="height">高度</label>
+        <input id="height" name="height" (keyup)="hello()" (focusout)="voting(windowform.valid)" (keyup.enter)="voting(windowform.valid)" required maxlength="7" [(ngModel)]="objinfo.height_" #height="ngModel" allowedRangeIndex="{{allows(2)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="height.invalid " class="warn-word">
+            <div *ngIf="height.errors.required"> 高度必须指定 </div>
+            <div *ngIf="height.errors.maxlength"> 请输入1~7位数字</div>
+            <div *ngIf="height.errors.allowedRangeIndex"> {{propertyRange_[2].alarm}}</div>
+            <div *ngIf="height.errors.forbiddenName">请输入数字(只允许2位小数)</div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="depth">深度</label>
+        <input id="depth" name="depth" (keyup)="hello()" (focusout)="voting(windowform.valid)" (keyup.enter)="voting(windowform.valid)" required maxlength="7" [(ngModel)]="objinfo.depth_" #depth="ngModel" allowedRangeIndex="{{allows(2)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="depth.invalid" class="warn-word">
+            <div *ngIf="depth.errors.required"> 宽度必须指定</div>
+            <div *ngIf="depth.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="depth.errors.allowedRangeIndex"> {{propertyRange_[1].alarm}}</div>
+            <div *ngIf="depth.errors.forbiddenName"> 请输入数字</div>
+        </div>
+    </div>
+
+
+
+    <div class="input-group" aimShowTip>
+        <label for="width">厚度</label>
+        <input id="width" name="width" (keyup)="hello()" (focusout)="voting(windowform.valid)" (keyup.enter)="voting(windowform.valid)" required maxlength="7" [(ngModel)]="objinfo.width_" #width="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$"
+            disabled>
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <!-- 以下为提示信息，如果想让本输入框可用并显示下列提示信息，取消上面的disabled限制 -->
+        <!-- 门窗厚度跟随门洞， 不可修改-->
+        <div *ngIf="width.invalid " class="warn-word">
+            <div *ngIf="width.errors.required">厚度不可为空 </div>
+            <div *ngIf="width.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="width.errors.allowedRangeIndex"> {{propertyRange_[2].alarm}}</div>
+            <div *ngIf="width.errors.forbiddenName">请输入数字(只允许2位小数)</div>
+        </div>
+        <div class="ts-info">门窗厚度依据门洞确定</div>
+    </div>
+
+    <div class="input-group">
+        <label>类型</label>
+
+        <select name="state" [ngModel]="objinfo.openingType_" (ngModelChange)="onChange($event)">
+            <option *ngFor="let state of states" [ngValue]="state.id">
+              {{ state.abbrev }}
+            </option>
+          </select>
+    </div>
+</form>

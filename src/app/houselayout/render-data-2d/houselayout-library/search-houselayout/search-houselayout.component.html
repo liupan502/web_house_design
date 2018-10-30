@@ -1,0 +1,72 @@
+<div class="my-houselayout">
+    <div class="header-top">
+        <div class="search-bar-wrap">
+            <div class="address-select" (click)="toShowAdd()">
+                <span  [title] = "provinceName">{{provinceName}}</span> <i class="fa fa-angle-down"></i>
+            </div>
+            <!-- <div class="address-select">
+                 <select name="province" [(ngModel)]="provinceValue" (ngModelChange)="selectProvice($event)">
+                    <option value="default">省份</option>
+                    <option *ngFor="let province of provinces" [value]="province.provinceName">
+                        {{province.provinceName}}
+
+                    </option>
+                </select> 
+            </div> -->
+
+
+
+            <input class="search-input" name="houseName" type="search" placeholder="请输入楼盘/小区" [(ngModel)]="houseName" />
+            <input class="search-btn" type="submit" value="搜 索" (click)="toSearchHouselayout()" />
+        </div>
+        <span class="icon-close fa fa-close" (click)="toClose()"></span>
+    </div>
+
+    <div class="houselayout-list-box">
+        <div class="search-info">
+
+            <p>为您找到 <i>{{searchHouselayouts.length}}</i> 张符合要求的户型</p>
+            <select name="houseType" [(ngModel)]="house_type" (ngModelChange)="selectHouseType($event)" required>
+                 <!-- <option value="default">选择户型</option> -->
+                <option *ngFor="let type of houseType" [attr.value]="type.id">{{type.name}}</option>
+            </select>
+        </div>
+
+        <div class="houselayout-list">
+            <div class="houselayout-box" *ngFor="let houselayout of searchHouselayouts">
+                <img [src]="houselayout.thumbnail_url">
+                <div class="hover-box">
+                    <div class="btn-open">打开</div>
+                    <span class="icon-detail fa fa-info-circle" (click)="openDetailEdit(houselayout.no)"></span>
+                    <span class="icon-delete fa fa-trash" (click)="delete(houselayout.no)"></span>
+                </div>
+                <div class="title">
+                    <span>{{houselayout.house_type_label}}</span> <span>{{houselayout.area}} 平方米</span>
+                    <p class="name">{{houselayout.name}}</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="paginator-box">
+            <app-paginator rows="8" pageLinkSize="4" (onPageChange)="pageChange($event)"></app-paginator>
+        </div>
+    </div>
+</div>
+
+
+<div class="dropdown-box" [ngClass]="{'active': isShowProvince}">
+    <div class="address-box">
+        <ul>
+            <li *ngFor="let province of provinces;let i = index" (click)="clickProvice($event, i, province.id, province.name)" class="main-province">
+                <span>{{province.name}}</span>
+            </li>
+            <ul id="citylist" class="city-list" [class.show]="citys.length>1">
+                <li *ngFor="let city of citys" (click)="clickCity(city.name, city.id)">
+                    <span>{{city.name}}</span>
+                </li>
+            </ul>
+        </ul>
+    </div>
+</div>

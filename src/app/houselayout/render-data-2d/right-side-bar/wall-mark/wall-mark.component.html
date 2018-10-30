@@ -1,0 +1,83 @@
+ <!-- 墙标allowedRangeIndex="objinfo,propertyRange_[0]" numberallowedonly="^[0-9]+\.{0,1}[0-9]{0,2}$" twodecimalDigitmost="^[0-9]+(.[0-9] {2})?$" [(ngModel)="distancefromground_"]
+        #name="ngModel" (focusout)="vote(distanceFromground.errors,'distancefromground_'")
+        (keyup.enter)="vote(distanceFromground,'distancefromground_'" 
+    && (distanceFromground.dirty || distanceFromground.touched)-->  
+
+    <!-- <div class="input-group">
+        <label>宽度</label>
+        <input type="text" placeholder="/"  (keyup)="$event.target.value = correction($event.target.value,'length_',propertyRange_[1])" [value]="getProperty('length_')"  (keyup.enter)="vote('length_',propertyRange_[1])" (focusout)="vote('length_',propertyRange_[1])">
+        <span>mm</span>
+    </div>
+
+    <div class="input-group">
+        <label>高度</label>
+        <input type="text" placeholder="/" (keyup)="$event.target.value = correction($event.target.value,'width_',propertyRange_[2])" [value]="getProperty('width_')"   (keyup.enter)="vote('width_',propertyRange_[2])"  (focusout)="vote('width_',propertyRange_[2])">
+        <span>mm</span>
+    </div>
+
+    <div class="input-group">
+        <label>旋转角度</label>
+        <input type="text" placeholder="/"(keyup)="$event.target.value = correction($event.target.value,'rotationZ_',propertyRange_[3])"  [value]="getProperty('rotationZ_')"    (keyup.enter)="vote('rotationZ_',propertyRange_[3])" (focusout)="vote('rotationZ_',propertyRange_[3])">
+        <span>度</span>
+    </div>
+</div> -->
+
+
+
+<form #heroForm="ngForm" (focusin)='disableOthers()'>         
+    <div class="input-group" aimShowTip>
+        <label for="name">离地高度</label>
+        <input id="name" name="name" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.distancefromground_" #name="ngModel" allowedRangeIndex="{{allows(0)}}"  forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$" disabled> 
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="name.invalid " class="warn-word">
+            <div *ngIf="name.errors.required">离地高度必须指定</div>
+            <div *ngIf="name.errors.maxlength">请输入1~7位数字</div>            
+            <div *ngIf="name.errors.allowedRangeIndex">{{propertyRange_[0].alarm}}</div>
+            <div *ngIf="name.errors.forbiddenName">请输入数字</div>
+        </div>
+        <div class="ts-info">不可编辑</div>
+    </div> 
+
+    <div class="input-group">
+        <label for="width">宽度</label>
+        <input id="width" name="width" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.length_" #width="ngModel" allowedRangeIndex="{{allows(0)}}"  forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="width.invalid" class="warn-word">
+            <div *ngIf="width.errors.required"> 宽度必须指定</div>        
+            <div *ngIf="width.errors.maxlength">请输入1~7位数字</div> 
+            <div *ngIf="width.errors.allowedRangeIndex"> {{propertyRange_[1].alarm}}</div>
+            <div *ngIf="width.errors.forbiddenName"> 请输入数字</div>
+        </div>
+    </div>         
+
+
+    <div class="input-group">
+        <label for="height">高度</label>
+        <input id="height"  name="height" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.width_" #height="ngModel" allowedRangeIndex="{{allows(0)}}"  forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+         <span *ngIf="name.pending">Checking istaken...</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="height.invalid " class="warn-word">
+            <div *ngIf="height.errors.required"> 高度必须指定 </div>
+            <div *ngIf="height.errors.maxlength"> 请输入1~7位数字</div>
+            <div *ngIf="height.errors.allowedRangeIndex"> {{propertyRange_[2].alarm}}</div>
+            <div *ngIf="height.errors.forbiddenName">请输入数字(只允许2位小数)</div>
+        </div>
+    </div>         
+
+
+    <div class="input-group" >
+        <label for="rotation">旋转角度</label>
+        <input id="rotation" name="rotation" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.rotationZ_" #rotation="ngModel" allowedRangeIndex="{{allows(0)}}"  forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$" >
+        <span>度</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="rotation.invalid "  class="warn-word">
+            <div *ngIf="rotation.errors.required"> 旋转角度必须指定 </div>
+            <div *ngIf="rotation.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="rotation.errors.allowedRangeIndex"> {{propertyRange_[3].alarm}}</div>
+            <div *ngIf="rotation.errors.forbiddenName">请输入数字</div>
+        </div>
+    </div>         
+</form>               

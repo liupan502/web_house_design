@@ -1,0 +1,28 @@
+<!-- <div class="right-side" [class.disabled]="disabled_">
+    <div class="right-btn">
+        <div class="img-bg" (click)=" toggleRight()"><img id="myImgRight" src="assets/img/right_shrink.png" /></div>
+    </div>
+    <div class="right-side-con"  [@rightShowChanged]="rightShowChanged">
+        <div class="right-arr">
+            <h4>属性</h4>
+            <img id="oImg" src="assets/img/icon_shrink_s.png"/>   
+        </div> 
+        <div class="right-con" >
+            <ng-template ad-host  #foo></ng-template>
+        </div> 
+    </div>   
+</div> -->
+
+
+<div class="right-side" [class.show]="isShow" >
+    <div class="right-side-con">
+        <div class="right-arr">
+            <h4>属性</h4>
+            <span class="icon icon-close" (click)="close()"></span>
+        </div>
+        <div class="right-con">
+            <ng-template ad-host #foo></ng-template>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,239 @@
+.header {
+    position: relative;
+}
+
+.header-bar {
+    height: 30px;
+    width: 100%;
+    background: #232936;
+    position: relative;
+    z-index: 101;
+}
+
+.logo {
+    margin: 0 25px 0 10px;
+    font-size: 36px;
+    color: #1da1f2;
+    line-height: 32px;
+}
+
+.header-nav li {
+    color: #666B76;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.header-bar .login-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(255, 255, 255, .6);
+}
+
+.login-box .login-list {
+    float: right;
+    font-size: 13px;
+    line-height: 28px;
+    outline: none;
+}
+
+.logout,
+.isLogin .login {
+    display: none;
+}
+
+.login,
+.isLogin .logout {
+    display: block;
+}
+
+.login-box .login {
+    margin-right: 50px;
+}
+
+.login-box .state {
+    margin-right: 12px;
+}
+
+.login-box .login-list {
+    cursor: pointer;
+}
+
+.login-box .login-list:hover {
+    color: #1DA1F2;
+}
+
+.login-list button {
+    width: 60px;
+    height: 20px;
+    border-radius: 2px;
+    background: #1DA1F2;
+    /* margin: 8px auto 0; */
+    font-size: 12px;
+    color: #fff;
+    border: none;
+}
+
+.login-list .icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    margin: 6px 3px;
+    /* border: 1px dotted #B1B3B5; */
+}
+
+.isLogin .icon {
+    border: none;
+}
+
+.login-list .icon-login {
+    font-size: 20px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.header .dropdown-box.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.dropdown-box .list-box {
+    background: #232936;
+    height: 60px;
+    padding: 0 20px;
+    outline: none;
+}
+
+.dropdown-box .list-box span {
+    color: #fff;
+    line-height: 60px;
+}
+
+.user-setting-box {
+    position: relative;
+    height: 30px;
+}
+
+.user-setting {
+    width: 84px;
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    background: #333843;
+    border-radius: 2px;
+}
+
+.login-list .fa-sort-asc {
+    position: absolute;
+    top: -6px;
+    left: 55px;
+    color: #232936;
+}
+
+.user-setting-box:hover .user-setting {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+
+.header .user-setting.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.user-setting .list-box {
+    display: block;
+    outline: none !important;
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 10px 0 6px;
+    border-bottom: 1px solid #797979;
+    color: rgba(255, 255, 255, .6);
+}
+
+.user-setting .list-box:last-child {
+    border-bottom: none;
+}
+
+.user-setting .list-box span {
+    color: rgba(255, 255, 255, .6);
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.user-setting .list-box div {
+    text-align: center;
+    outline: none;
+}
+
+.user-setting .list-box .icon-login {
+    width: 30px;
+
+}
+
+.account-box,
+.logout {
+    
+    width: 100%;
+    color: rgba(255, 255, 255, .6);
+}
+
+.user-setting-header {
+    margin-left: 60px;
+    position: absolute;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+.setting {
+    width: 150px;
+    height: 30px;
+    background-color: #232936;
+}
+
+.design-setting span {
+    outline: none;
+}
+
+.arrow-box {
+    position: absolute;
+    top:-15px;
+    left:50%;
+}
+
+.list-box .setting-list-item:hover {
+    color: #1DA1F2;
+}
+
+.triangle-up {
+    position:absolute;
+    left:50%;
+    transform: translate(-50%);
+    top:-7px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #333843;
+}
+
+.name-in-header {
+    line-height: 32px;
+    height: 32px;
+    font-size: 14px;
+    vertical-align: middle;
+}

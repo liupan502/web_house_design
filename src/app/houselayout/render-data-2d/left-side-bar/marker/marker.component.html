@@ -1,0 +1,12 @@
+<div class="classify-con">
+    <!-- <div class="search-bar">
+        <input type="search" placeholder="请输入关键字"/>
+        <img src="assets/img/icon-search.png"/>
+    </div> -->
+
+    <div  *ngFor="let list of lists" class="line-list" >
+            <span class="iconfont" [ngClass]="list.icon" [class.selected]="list === selectedList" (click)="onSelect(list)"></span>
+        <p>{{list.name}}</p>
+    </div>
+
+</div>

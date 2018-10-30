@@ -1,0 +1,26 @@
+<div class="my-houselayout">
+    <div class="header-top">
+        <p>我的户型</p>
+        <span class="icon-close fa fa-close" (click)="toClose()"></span>
+    </div>
+    <!--<div class="header-nav">-->
+    <!--<span [class.active]="houselayoutType==0" (click)="changeHouseType(0)">自由绘制</span>-->
+    <!--<span [class.active]="houselayoutType==1" (click)="changeHouseType(1)">量房宝户型</span>-->
+    <!--</div>-->
+    <div class="houselayout-list-box">
+        <div class="houselayout-list">
+            <div class="houselayout-box" *ngFor="let houstlayout of myHouselayouts">
+                <img [src]="houstlayout.preview_url">
+                <div class="hover-box">
+                    <div class="btn-open">打开</div>
+                    <span class="icon-detail fa fa-info-circle" (click)="openDetailEdit(houstlayout.no)"></span>
+                    <span class="icon-delete fa fa-trash" (click)="delete($event, houstlayout.no)"></span>
+                </div>
+                <div class="name">{{houstlayout.name}}</div>
+            </div>
+        </div>
+        <div class="paginator-box">
+            <app-paginator rows="8" pageLinkSize="4" [totalRecords]="totalCount" (onPageChange)="pageChange($event)"></app-paginator>
+        </div>
+    </div>
+</div>

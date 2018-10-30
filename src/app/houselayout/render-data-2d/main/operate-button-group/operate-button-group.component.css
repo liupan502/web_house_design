@@ -1,0 +1,28 @@
+.operate-btn-group{
+    position:absolute;
+    display:none;
+}
+
+/* 删除 */
+.delete-button{
+    width:36px;
+    height:36px;
+    border-radius: 18px;
+    background:rgba(33,42,51,.9);
+    cursor: pointer;
+    float:left;
+    margin-right:10px;
+   
+}
+
+.delete-button:hover{    
+    background:rgba(15,170,242,.9);
+} 
+
+.operate-btn-group span.iconfont{
+    color:#fff;
+    font-size:24px;
+    display:block;
+    text-align: center;
+    line-height: 36px;
+}

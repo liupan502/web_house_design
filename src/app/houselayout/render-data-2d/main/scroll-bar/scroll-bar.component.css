@@ -1,0 +1,70 @@
+.scroll-bar {
+    width: 214px;
+    height: 30px;
+    background: rgba(35, 41, 54, .1);
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.default-bar {
+    width: 153px;
+    height: 4px;
+    background: rgba(102, 109, 120, 1);
+    position: absolute;
+    cursor: pointer;
+    left: 14%;
+    top: 44%;
+}
+
+.slide-bar {
+    width: 12px;
+    height: 12px;
+    background-color: #1da1f2;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: -4px;
+    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.33);
+}
+
+.scroll-con button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #333843;
+}
+
+.scroll-con button:hover {
+    color: #333843;
+    opacity: 0.5;
+}
+
+.zoomIn {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+}
+
+.zoomOut {
+    position: absolute;
+    right: 10px;
+    top:4px;
+}
+
+.slide-active {
+    height: 4px;
+    background: rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+
+.scroll-bar .iconfont{
+    font-size:20px;
+    color:#333843;   
+}
+
+/* .scroll-bar .iconfont:hover{
+    opacity: .5 
+} */

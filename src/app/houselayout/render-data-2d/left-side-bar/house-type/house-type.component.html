@@ -1,0 +1,15 @@
+
+<div class="classify-con">
+    <!-- <div class="search-bar">
+        <input type="search" placeholder="请输入关键字"/>
+        <img src="assets/img/icon-search.png"/>
+    </div> -->
+
+    <div  *ngFor="let statu of disablestatus; let i = index" class="line-list">
+        <span *ngIf="!statu" class="iconfont" [ngClass]="lists[i].icon" (click)="onSelect(lists[i])" [class.selected]="lists[i] === selectedList"></span>
+        <span *ngIf="statu" [ngClass]="lists[i].icon" [class.selected]="lists[i] === selectedList" class="disabled iconfont" (click)="cannotselect(lists[i])"></span>
+        <p>{{lists[i].name}}</p>
+    </div> 
+    <app-messages [(value)]="msgs"></app-messages>
+</div>
+

@@ -1,0 +1,135 @@
+.detail-edit {
+    background: #17202B;
+    border-radius: 5px;
+
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+
+    position: relative;
+}
+
+.header-top {
+    color: #fff;
+    padding: 0 15px;
+    line-height: 40px;
+    position: relative;
+}
+
+.header-top p {
+    font-size: 18px;
+}
+
+.header-top .icon-close {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 18px;
+    color: #fff;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.detail-edit .edit-box {
+    background: #2c303a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    color: #fff;
+    padding: 30px;
+}
+  
+.edit-box .show-box {
+    width: 170px;
+    height: 170px;
+    background: #f0f0f0;
+    margin-right: 20px;
+}
+
+.detail-edit .data-box {
+    flex: 1;
+}
+
+.data-box .data-list {
+    display: flex;
+    margin: 15px 0;
+}
+
+.data-box .data-list:nth-of-type(1) {
+    margin: 0;
+}
+
+.data-list .list-name {
+    font-size: 15px;
+    width: 60px;
+    line-height: 30px;
+    position: relative;
+}
+
+.data-list .area-data {
+    position: relative;
+    margin-left: 5px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.data-list .list-name.must-fill:before, .data-list .area-data.must-fill:before {
+    content: '*';
+    color: #ca0202;
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+
+.data-list select {
+    font-size: 15px;
+    width: 100px;
+    margin: 0 10px;
+    padding: 0 5px;
+    border: .5px solid #ddd;
+    color: #fff;
+    line-height: 30px;
+    background: #2c303a;
+}
+
+.data-list input {
+    font-size: 15px;
+    width: 328px;
+    margin: 0 10px;
+    padding: 0 5px;
+    border: .5px solid #ddd;
+    color: #fff;
+    line-height: 30px;
+}
+
+.data-list.other input {
+    width: 123px;
+}
+
+.data-box .save {
+    width: 100%;
+}
+
+.data-box .btn-save {
+    display: block;
+    width: 83px;
+    background: #1D97E2;
+    font-size: 15px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 5px;
+    margin: 40px auto 0;
+    border: none;
+    color: #fff;
+}
+
+.error {
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+.error span {
+    color: red;
+    font-size: 14px;
+    background: url("../../../../../assets/img/user-setting/icon-errors.png") left no-repeat;
+    padding: 5px 20px;
+}

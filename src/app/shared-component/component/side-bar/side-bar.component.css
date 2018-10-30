@@ -1,0 +1,63 @@
+.side-bar {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.bar-btn {
+    background: rgba(23, 32, 43, .2);
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    cursor: pointer;
+}
+
+.left-bar .bar-btn {
+    position: absolute;
+    top: 0;
+    right: -8px;
+}
+
+.right-bar .bar-btn {
+    position: absolute;
+    top: 0;
+    left: -8px;
+}
+
+.bar-btn:hover {
+    background: rgba(23, 32, 43, .4);
+}
+
+.img-bg {
+    width: 8px;
+    background: rgba(29, 161, 242, .5);
+    height: 84px;
+    position: absolute;
+    bottom: 40%;
+    cursor: pointer;
+}
+
+.img-bg img {
+    display: block;
+    padding: 39px 0;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.img-bg .shrink-icon {
+    background: url("../../../../assets/img/common/icon/right_shrink_s.png") center no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.right-bar .img-bg .shrink-icon {
+    background: url("../../../../assets/img/common/icon/left_shrink_s.png") center no-repeat;
+}
+
+.img-bg .shrink-icon.inactive {
+    transform: rotate(180deg);
+}

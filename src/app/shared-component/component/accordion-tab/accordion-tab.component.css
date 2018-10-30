@@ -1,0 +1,80 @@
+.ui-accordion {
+    height: 100%;
+}
+
+.ui-accordion-header {
+    cursor: pointer;
+    position: relative;
+    zoom: 1;
+    background: #232936 !important;
+    border: none !important;
+}
+
+.ui-accordion-header a {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 18px;
+    font-size: 14px;
+    color: #fff !important;
+}
+
+.ui-accordion-header a:hover, .ui-accordion-header a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.ui-accordion-content {
+    padding: 0em;
+    border-top: 0;
+    overflow: visible;
+    zoom: 1;
+    background-color: transparent;
+}
+
+.ui-accordion-header.ui-state-disabled,
+.ui-accordion-header.ui-state-disabled a {
+    cursor: default;
+}
+
+.ui-accordion-content-wrapper-overflown {
+    overflow: hidden;
+}
+
+.ui-rtl .ui-accordion .ui-accordion-header a {
+    padding: 10px 23px;
+}
+
+.active-highlight {
+    width: 4px;
+    height: 18px;
+    background: #0faaf2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px 0 9px;
+}
+
+.icon-caretright {
+    background: url("../../../../assets/img/common/icon/right_shrink.png") center no-repeat;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+
+.fa-caret-down {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    opacity: 1;
+}
+
+@media screen and (max-width: 1366px) {
+    .ui-accordion-header a {
+        height: 35px;
+        line-height: 35px;
+    }
+}

@@ -1,0 +1,56 @@
+<div class="detail-edit">
+    <div class="header-top">
+        <p>编辑详情</p>
+        <span class="icon-close fa fa-close" (click)="toClose()"></span>
+    </div>
+    <div class="edit-box">
+        <div class="show-box"></div>
+        <div class="data-box">
+            <form #f="ngForm" (submit)="save()">
+                <div class="data-list">
+                    <div class="list-name must-fill">所在地区</div>
+                    <select name="province" [(ngModel)]="provinceValue" (ngModelChange)="selectProvince($event)">
+                        <option value="default">省份</option>
+                        <option *ngFor="let province of provinces" [value]="province.id">
+                            {{province.name}}
+                        </option>
+                    </select>
+                    <select name="city" [(ngModel)]="cityValue" (ngModelChange)="selectCity($event)">
+                        <option value="default">城市</option>
+                        <option *ngFor="let city of citys" [value]="city.id">
+                            {{city.name}}
+                        </option>
+                    </select>
+                    <select name="area" [(ngModel)]="areaValue" (change)="selectArea()">
+                        <option value="default">地区</option>
+                        <option *ngFor="let area of areas" [value]="area.id">
+                            {{area.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="data-list">
+                    <div class="list-name must-fill">户型名称</div>
+                    <input type="text" placeholder="如：xx苑/xx期/xx轩" #housename="ngModel" [(ngModel)]="houselayout.name" name="housename" maxlength="20" required>
+                    <!--<div [hidden]="housename.valid || housename.pristine" class="error">-->
+                    <!--<span [hidden]="housename.valid">不能为空</span>-->
+                    <!--</div>-->
+                </div>
+                <div class="data-list">
+                    <div class="list-name">楼盘名称</div>
+                    <input type="text" placeholder="请输入楼盘名称" name="communityname" [(ngModel)]="houselayout.community_name">
+                </div>
+                <div class="data-list other">
+                    <div class="list-name must-fill">房型</div>
+                    <select name="houseType" [(ngModel)]="houselayout.house_type" (ngModelChange)="selectHouseType($event)" required>
+                        <option *ngFor="let type of houseType" [attr.value]="type.id">{{type.name}}</option>
+                    </select>
+                    <span class="area-data must-fill">建筑面积m²</span>
+                    <input type="number" [(ngModel)]="houselayout.area" name="areasize" required>
+                </div>
+                <div class="save">
+                    <button class="btn-save" type="submit">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

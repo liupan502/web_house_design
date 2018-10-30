@@ -1,0 +1,14 @@
+
+.ui-slider-horizontal {
+    height: 5px;
+    background: #474748;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    margin-top: -2px;
+}
+
+.ui-slider .ui-slider-range {
+    background: #14a4ff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) inset;
+}

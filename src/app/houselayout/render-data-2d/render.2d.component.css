@@ -1,0 +1,23 @@
+app-my-houselayout {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
+}
+
+.cover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
+}
+
+app-detail-edit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
+}

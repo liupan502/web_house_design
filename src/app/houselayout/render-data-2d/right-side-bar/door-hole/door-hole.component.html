@@ -1,0 +1,57 @@
+<!-- 门洞 -->
+<form #heroForm="ngForm">
+    <div class="input-group">
+        <label for="length">长度</label>
+        <input id="length" name="length" (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.length_" #length="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="length.invalid " class="warn-word">
+            <div *ngIf="length.errors.required">长度必须指定</div>
+            <div *ngIf="length.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="length.errors.allowedRangeIndex">{{propertyRange_[0].alarm}}</div>
+            <div *ngIf="length.errors.forbiddenName">请输入数字</div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="height">宽度</label>
+        <input id="height" name="height" disabled (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.height_" #height="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="height.invalid " class="warn-word">
+            <div *ngIf="height.errors.required"> 宽度必须指定</div>
+            <div *ngIf="height.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="height.errors.allowedRangeIndex"> {{propertyRange_[1].alarm}}</div>
+            <div *ngIf="height.errors.forbiddenName"> 请输入数字</div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="width">厚度</label>
+        <input id="width" name="width" (keyup)="hello()" disabled (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.width_" #width="ngModel" allowedRangeIndex="{{allows(0)}}" forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>mm</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="width.invalid " class="warn-word">
+            <div *ngIf="width.errors.required"> 厚度必须指定</div>
+            <div *ngIf="width.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="width.errors.allowedRangeIndex"> {{propertyRange_[2].alarm}}</div>
+            <div *ngIf="width.errors.forbiddenName"> 请输入数字</div>
+        </div>        
+    </div>
+
+
+
+    <div class="input-group">
+        <label for="archeight">拱高</label>
+        <input id="archeight" name="archeight" disabled (keyup)="hello()" (focusout)="voting(heroForm.valid)" (keyup.enter)="voting(heroForm.valid)" required maxlength="7" [(ngModel)]="objinfo.archeight_" #archeight="ngModel" allowedRangeIndex="{{allows(0)}}"
+            forbiddenName="^[0-9]+\.{0,1}[0-9]{0,2}$">
+        <span>度</span>
+        <!--限定本域不可为空的提示 -->
+        <div *ngIf="archeight.invalid " class="warn-word">
+            <div *ngIf="archeight.errors.required"> 拱高必须指定 </div>
+            <div *ngIf="archeight.errors.maxlength">请输入1~7位数字</div>
+            <div *ngIf="archeight.errors.allowedRangeIndex"> {{propertyRange_[3].alarm}}</div>
+            <div *ngIf="archeight.errors.forbiddenName">请输入数字</div>
+        </div>
+    </div>
+</form>
